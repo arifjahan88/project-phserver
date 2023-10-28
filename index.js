@@ -14,8 +14,8 @@ const uri = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@clust
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
-    // strict: true,
-    // deprecationErrors: true,
+    strict: true,
+    deprecationErrors: true,
   },
 });
 async function run() {
