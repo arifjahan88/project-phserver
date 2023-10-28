@@ -36,7 +36,7 @@ async function run() {
 
     app.get("/collagedata", async (req, res) => {
       const data = await collageData.find().toArray();
-
+      console.log(data);
       res.send(data);
     });
 
