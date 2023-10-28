@@ -82,7 +82,7 @@ async function run() {
       res.send(result);
     });
   } finally {
-    // await client.close();
+    await client.close();
   }
 }
 run().catch((err) => console.error(err));
