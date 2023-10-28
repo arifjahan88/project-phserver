@@ -96,3 +96,9 @@ app.get("/review", async (req, res) => {
   const result = await reviewcollection.find().toArray();
   res.send(result);
 });
+app.delete("/review/:id", verifyjwt, async (req, res) => {
+  const id = req.params.id;
+  const query = { _id: ObjectId(id) };
+  const result = await reviewcollection.deleteOne(query);
+  res.send(result);
+});
