@@ -98,7 +98,7 @@ app.get("/review", async (req, res) => {
 });
 app.delete("/review/:id", async (req, res) => {
   const id = req.params.id;
-  const query = { _id: ObjectId(id) };
+  const query = { _id: new ObjectId(id) };
   const result = await reviewcollection.deleteOne(query);
   res.send(result);
 });
